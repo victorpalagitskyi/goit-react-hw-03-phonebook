@@ -40,10 +40,11 @@ export class App extends Component {
   changeFilter = e => { 
     this.setState({filter: e.currentTarget.value})
   } 
-   filtredContacts = () => {
+  filtredContacts = () => { 
     const { filter, contacts } = this.state;
+    const lowerFilter = filter.toLowerCase()
     return contacts.filter(contact =>
-      contact.name.includes(filter)
+      contact.name.toLowerCase().includes(lowerFilter)
     );
   };
 
